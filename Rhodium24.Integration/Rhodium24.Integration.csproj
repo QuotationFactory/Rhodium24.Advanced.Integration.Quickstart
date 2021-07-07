@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MetalHeaven.Integration.Shared" Version="0.1.4">
+      <PackageReference Include="MetalHeaven.Integration.Shared" Version="0.1.5">
           <Private>false</Private>
           <ExcludeAssets>runtime</ExcludeAssets>
       </PackageReference>
