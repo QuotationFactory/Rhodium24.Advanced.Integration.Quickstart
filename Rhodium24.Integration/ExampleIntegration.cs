@@ -5,6 +5,7 @@ using MetalHeaven.Integration.Shared.Classes;
 using MetalHeaven.Integration.Shared.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Rhodium24.Integration
 {
@@ -14,11 +15,11 @@ namespace Rhodium24.Integration
         public override Guid Id { get; set; } = Guid.Parse("d30b30a4-66db-4bd3-b58e-1067424b1692");
         public override string Name { get; set; } = "Example integration";
 
-        public ExampleIntegration(ILogger<ExampleIntegration> logger)
+        public ExampleIntegration(IOptions<AgentSettings> options, ILogger<ExampleIntegration> logger) : base(options)
         {
             _logger = logger;
         }
-        
+
         public override void RegisterServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddHostedService<IntegrationOutputFileWatcher>();
